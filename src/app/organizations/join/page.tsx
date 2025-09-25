@@ -39,7 +39,8 @@ export default function JoinOrganizationView(): JSX.Element {
                         <input
                             type="submit"
                             value="Join organization"
-                            className="rounded-lg text-white font-semibold bg-blue-500 w-full text-center hover:bg-blue-600 cursor-pointer duration-200 py-1.5"
+                            disabled={!code}
+                            className="rounded-lg text-white font-semibold bg-blue-500 w-full text-center hover:bg-blue-600 cursor-pointer duration-200 py-1.5 disabled:bg-gray-300"
                         />
                     </div>
                     <div className="w-full rounded p-2 bg-blue-200 text-blue-700 space-y-2">

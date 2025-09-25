@@ -4,10 +4,17 @@ import Link from "next/link";
 import Divider from "@/components/Divider";
 import Image from "next/image";
 import TeamBuildLogo from "@/components/TeamBuildLogo";
+import FormControl from "@/components/FormControl";
+import Checkbox from "@/components/Checkbox";
 
 export default function UserSignupView(): JSX.Element {
-    const [passwordVisible, setPasswordVisible] = useState(false);
-    const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [confirmPassword, setConfirmPassword] = useState<string>("");
+    const [termsOfService, setTermsOfService] = useState<boolean>(false);
+
     return (
         <main className="w-full min-h-screen flex items-center py-12 px-4 bg-linear-to-b from-blue-500/20 to-blue-500/10">
             <div className="w-full max-w-lg mx-auto space-y-10">
@@ -37,87 +44,12 @@ export default function UserSignupView(): JSX.Element {
                     </div>
                     <Divider text="OR CONTINUE WITH" />
                     <div className="flex flex-col sm:flex-row gap-4 items-center">
-                        <fieldset className="flex-1 w-full space-y-2">
-                            <legend className="font-semibold">First name</legend>
-                            <input
-                                type="text"
-                                name="firstName"
-                                id="firstName"
-                                placeholder="John"
-                                className="w-full rounded-lg border border-neutral-300 px-2 py-1 outline-2 outline-transparent focus:outline-gray-400 duration-100"
-                            />
-                        </fieldset>
-                        <fieldset className="flex-1 w-full space-y-2">
-                            <legend className="font-semibold">Last name</legend>
-                            <input
-                                type="text"
-                                name="lastName"
-                                id="lastName"
-                                placeholder="Doe"
-                                className="w-full rounded-lg border border-neutral-300 px-2 py-1 outline-2 outline-transparent focus:outline-gray-400 duration-100"
-                            />
-                        </fieldset>
+                        <FormControl type="text" legend="First name" id="firstName" placeholder="John" state={firstName} setState={setFirstName} />
+                        <FormControl type="text" legend="Last name" id="lastName" placeholder="Doe" state={lastName} setState={setLastName} />
                     </div>
-                    <fieldset className="space-y-2">
-                        <legend className="font-semibold">Email</legend>
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            placeholder="name@company.com"
-                            className="w-full rounded-lg border border-neutral-300 px-2 py-1 outline-2 outline-transparent focus:outline-gray-400 duration-100"
-                        />
-                    </fieldset>
-                    <fieldset className="space-y-2">
-                        <legend className="font-semibold">Password</legend>
-                        <label
-                            htmlFor="password"
-                            className="flex items-center w-full rounded-lg border border-neutral-300 px-2 py-1 outline-2 outline-transparent has-focus:outline-gray-400 duration-100"
-                        >
-                            <input
-                                type={passwordVisible ? "text" : "password"}
-                                name="password"
-                                id="password"
-                                placeholder="Create a password"
-                                className="flex-1 focus:outline-none"
-                            />
-                            <button
-                                type="button"
-                                aria-label="show password"
-                                className="cursor-pointer px-1"
-                                onClick={() => setPasswordVisible(!passwordVisible)}
-                            >
-                                <i
-                                    className={`bi bi-eye ${passwordVisible ? "text-blue-500" : "text-neutral-400"} duration-200`}
-                                ></i>
-                            </button>
-                        </label>
-                    </fieldset>
-                    <fieldset className="space-y-2">
-                        <legend className="font-semibold">Confirm password</legend>
-                        <label
-                            htmlFor="confirmPassword"
-                            className="flex items-center w-full rounded-lg border border-neutral-300 px-2 py-1 outline-2 outline-transparent has-focus:outline-gray-400 duration-100"
-                        >
-                            <input
-                                type={confirmPasswordVisible ? "text" : "password"}
-                                name="confirmPassword"
-                                id="confirmPassword"
-                                placeholder="Confirm your password"
-                                className="flex-1 focus:outline-none"
-                            />
-                            <button
-                                type="button"
-                                aria-label="show confirm password"
-                                className="cursor-pointer px-1"
-                                onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}
-                            >
-                                <i
-                                    className={`bi bi-eye ${confirmPasswordVisible ? "text-blue-500" : "text-neutral-400"} duration-200`}
-                                ></i>
-                            </button>
-                        </label>
-                    </fieldset>
+                    <FormControl type="email" name="email" placeholder="name@company.com" legend="Email" state={email} setState={setEmail} />
+                    <FormControl type="password" name="password" placeholder="Create a password" legend="Password" state={password} setState={setPassword} />
+                    <FormControl type="password" name="confirmPassword" placeholder="Confirm your password" legend="Confirm password" state={confirmPassword} setState={setConfirmPassword} />
                     <div className="bg-green-500/20 rounded-lg px-4 py-4 text-green-900 space-y-2">
                         <p className="font-semibold">Your free trial includes:</p>
                         <ul className="space-y-1 mx-2">
@@ -135,21 +67,13 @@ export default function UserSignupView(): JSX.Element {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex items-center">
-                        <label htmlFor="termsOfService" className="flex gap-2 items-center cursor-pointer">
-                            <div className="group border-2 border-neutral-400 w-4 h-4 flex justify-center items-center">
-                                <i className="bi bi-check text-blue-500 text-lg scale-0 group-has-checked:scale-100 duration-100"></i>
-                                <input type="checkbox" name="termsOfService" id="termsOfService" className="hidden" />
-                            </div>
-                            <p>
-                                I agree to the
-                                &nbsp;
-                                <Link href="/" className="text-blue-500 hover:underline">Terms of Service</Link>
-                                &nbsp;and&nbsp;
-                                <Link href="/" className="text-blue-500 hover:underline">Privacy Policy</Link>
-                            </p>
-                        </label>
-                    </div>
+                    <Checkbox name="tos" state={termsOfService} setState={setTos}>
+                        I agree to the&nbsp;
+                        <Link href="/" className="text-blue-500 hover:underline">Terms of Service</Link>
+                        &nbsp;and&nbsp;
+                        <Link href="/" className="text-blue-500 hover:underline">Privacy Policy</Link>
+
+                    </Checkbox>
                     <div>
                         <input
                             type="submit"

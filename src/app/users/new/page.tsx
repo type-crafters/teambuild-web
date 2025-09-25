@@ -2,7 +2,7 @@ import type { JSX } from "react";
 
 export default function NewUserView(): JSX.Element {
     return (
-        <main className="w-full min-h-screen flex flex-col items-center py-12 px-4 bg-gray-50 space-y-10">
+        <main className="w-full min-h-screen flex flex-col items-center py-12 px-4 bg-gray-50 space-y-10 text-lg">
             <div className="space-y-6">
                 <div className="flex flex-col items-center gap-6">
                     <div className="aspect-square rounded-full bg-blue-100 flex justify-center items-center">
@@ -16,7 +16,7 @@ export default function NewUserView(): JSX.Element {
                 </div>
             </div>
             <div className="flex w-full max-w-3xl gap-8">
-                <div className="flex-1 rounded-lg bg-white shadow-lg shadow-neutral-400 p-6 flex flex-col items-center space-y-4">
+                <div className="flex-1 rounded-lg bg-white shadow-lg shadow-neutral-400 p-6 flex flex-col items-center space-y-4 hover:scale-101 duration-200">
                     <div className="bg-blue-500/20 rounded-full flex justify-center items-center aspect-square">
                         <i className="bi bi-people text-4xl text-blue-700 p-2"></i>
                     </div>
@@ -25,7 +25,7 @@ export default function NewUserView(): JSX.Element {
                         Already have an invitation code? Join your team&apos;s
                         existing workspace and start collaborating immediately.
                     </p>
-                    <div className="w-full rounded p-2 text-sm bg-white/80 space-y-2">
+                    <div className="w-full rounded p-2 text-base bg-white/80 space-y-2">
                         <h3 className="font-semibold">Perfect if you:</h3>
                         <ul className="opacity-80 list-disc list-inside ml-2">
                             <li>Have received an invitation code</li>
@@ -33,13 +33,13 @@ export default function NewUserView(): JSX.Element {
                             <li>Need access to ongoing projects</li>
                         </ul>
                     </div>
-                    <a href="" className="w-full py-1 flex justify-center items-center gap-2 rounded bg-blue-500 hover:bg-blue-600 text-white duration-200">
+                    <a href="/organizations/join" className="w-full py-1 flex justify-center items-center gap-2 rounded bg-blue-500 hover:bg-blue-600 text-white duration-200">
                         <span>Join with code</span>
-                        <i className="bi bi-box-arrow-up-right text-xs"></i>
+                        <i className="bi bi-box-arrow-up-right text-sm"></i>
                     </a>
                 </div>
-                <div className="flex-1 rounded-lg bg-white shadow-lg shadow-neutral-400 p-6 flex flex-col items-center space-y-4">
-                    <div class="bg-green-500/20 rounded-full flex justify-center items-center aspect-square">
+                <div className="flex-1 rounded-lg bg-white shadow-lg shadow-neutral-400 p-6 flex flex-col items-center space-y-4 hover:scale-101 duration-200">
+                    <div className="bg-green-500/20 rounded-full flex justify-center items-center aspect-square">
                         <i className="bi bi-plus-lg text-4xl text-green-700 p-2"></i>
                     </div>
                     <h2 className="text-2xl font-bold">Create Organization</h2>
@@ -47,7 +47,7 @@ export default function NewUserView(): JSX.Element {
                         Start fresh with your own workspace. Set up your team,
                         invite members, and begin your first project.
                     </p>
-                    <div className="w-full rounded p-2 text-sm space-y-2">
+                    <div className="w-full rounded p-2 text-base space-y-2">
                         <h3 className="font-semibold">Perfect if you:</h3>
                         <ul className="opacity-80 list-disc list-inside ml-2">
                             <li>Are starting a new team</li>
@@ -55,9 +55,9 @@ export default function NewUserView(): JSX.Element {
                             <li>Need to set up from scratch</li>
                         </ul>
                     </div>
-                    <a href="" className="w-full py-1 flex justify-center items-center gap-2 rounded bg-green-500 hover:bg-green-600 text-white duration-200">
+                    <a href="/organizations/create" className="w-full py-1 flex justify-center items-center gap-2 rounded bg-green-500 hover:bg-green-600 text-white duration-200">
                         <span>Create new organization</span>
-                        <i className="bi bi-box-arrow-up-right text-xs"></i>
+                        <i className="bi bi-box-arrow-up-right text-sm"></i>
                     </a>
                 </div>
             </div>

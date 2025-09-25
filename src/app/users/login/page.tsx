@@ -56,7 +56,7 @@ export default function UserLoginPage(): JSX.Element {
                     <FormControl type="password" id="password" legend="Password" placeholder="Enter your password" state={password} setState={setPassword}/>
                     <div className="flex items-center">
                         <div className="flex-1">
-                            <Checkbox legend="Remember me" state={rememberMe} setState={setRememberMe} />
+                            <Checkbox state={rememberMe} setState={setRememberMe} >Remember me</Checkbox>
                         </div>
                         <Link href="/" className="text-blue-400 hover:underline">
                             Forgot password?

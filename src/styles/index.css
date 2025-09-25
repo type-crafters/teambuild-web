@@ -1,7 +1,45 @@
 @import "tailwindcss";
 
+
+@utility appearance-base-select {
+    appearance: base-select;
+}
+
+@utility anchor-t-* {
+    top: calc(anchor(--value("top", "right", "bottom", "left")));
+}
+
+@utility anchor-b-* {
+    bottom: calc(anchor(--value("top", "right", "bottom", "left")));
+}
+
+@utility anchor-l-* {
+    left: calc(anchor(--value("top", "right", "bottom", "left")));
+}
+
+@utility anchor-r-* {
+    right: calc(anchor(--value("top", "right", "bottom", "left")));
+}
+
+@custom-variant picker {
+    &::picker(select) {
+        @slot;
+    }
+}
+
+@custom-variant picker-icon {
+    &::picker-icon {
+        @slot;
+    }
+}
+
 i.bi.bi-* {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/* 
+select::picker(select) {
+    top: calc(anchor(bottom) + 0.75rem);
+    left: anchor(left);
+} */

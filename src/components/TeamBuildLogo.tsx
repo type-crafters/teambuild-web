@@ -3,20 +3,17 @@ import type { JSX } from "react";
 export default function TeamBuildLogo({
     useLink
 }: TeamBuildLogoProps): JSX.Element {
+    const logo: JSX.IntrinsicElements.h1 = (
+        <h1 className="text-3xl font-semibold">
+            <i className="bi bi-bar-chart-line-fill text-blue-500"></i>
+            &nbsp;TeamBuild
+        </h1>
+    );
+
     if (useLink) {
-        <a href={useLink}>
-            <h1 className="text-3xl font-semibold">
-                <i className="bi bi-bar-chart-line-fill text-blue-500"></i>
-                &nbsp;TeamBuild
-            </h1>
-        </a>
+        return <a href={useLink}>{logo}</a>
     } else {
-        return (
-            <h1 className="text-3xl font-semibold">
-                <i className="bi bi-bar-chart-line-fill text-blue-500"></i>
-                &nbsp;TeamBuild
-            </h1>
-        )
+        return logo
     }
 }
 

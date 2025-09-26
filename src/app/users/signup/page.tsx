@@ -44,13 +44,13 @@ export default function UserSignupView(): JSX.Element {
                     </div>
                     <Divider text="OR CONTINUE WITH" />
                     <div className="flex flex-col sm:flex-row gap-4 items-center">
-                        <FormControl type="text" legend="First name" id="firstName" placeholder="John" state={firstName} setState={setFirstName} />
-                        <FormControl type="text" legend="Last name" id="lastName" placeholder="Doe" state={lastName} setState={setLastName} />
+                        <FormControl type="text" legend="First name" name="firstName" placeholder="John" state={firstName} setState={setFirstName} />
+                        <FormControl type="text" legend="Last name" name="lastName" placeholder="Doe" state={lastName} setState={setLastName} />
                     </div>
                     <FormControl type="email" name="email" placeholder="name@company.com" legend="Email" state={email} setState={setEmail} />
                     <FormControl type="password" name="password" placeholder="Create a password" legend="Password" state={password} setState={setPassword} />
                     <FormControl type="password" name="confirmPassword" placeholder="Confirm your password" legend="Confirm password" state={confirmPassword} setState={setConfirmPassword} />
-                    <div className="bg-green-500/20 rounded-lg px-4 py-4 text-green-900 space-y-2">
+                    <div className="bg-green-500/20 rounded-lg p-4 text-green-900 space-y-2">
                         <p className="font-semibold">Your free trial includes:</p>
                         <ul className="space-y-1 mx-2">
                             <li className="space-x-1.5">
@@ -67,12 +67,13 @@ export default function UserSignupView(): JSX.Element {
                             </li>
                         </ul>
                     </div>
-                    <Checkbox name="tos" state={termsOfService} setState={setTos}>
-                        I agree to the&nbsp;
-                        <Link href="/" className="text-blue-500 hover:underline">Terms of Service</Link>
-                        &nbsp;and&nbsp;
-                        <Link href="/" className="text-blue-500 hover:underline">Privacy Policy</Link>
-
+                    <Checkbox name="tos" state={termsOfService} setState={setTermsOfService}>
+                        <p>
+                            I agree to the&nbsp;
+                            <Link href="/" className="text-blue-500 hover:underline">Terms of Service</Link>
+                            &nbsp;and&nbsp;
+                            <Link href="/" className="text-blue-500 hover:underline">Privacy Policy</Link>
+                        </p>
                     </Checkbox>
                     <div>
                         <input

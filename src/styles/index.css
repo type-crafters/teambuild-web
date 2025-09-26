@@ -38,8 +38,8 @@ i.bi.bi-* {
     justify-content: center;
     align-items: center;
 }
-/* 
+ 
 select::picker(select) {
-    top: calc(anchor(bottom) + 0.75rem);
+    top: calc(anchor(bottom) + 10px);
     left: anchor(left);
-} */
+} 

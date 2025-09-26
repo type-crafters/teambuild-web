@@ -82,7 +82,7 @@ export default function CreateOrganizationView(): JSX.Element {
                         state={website}
                         setState={setWebsite}
                     />
-                    <div className="w-full rounded p-2 bg-blue-200 text-blue-700 space-y-2">
+                    <div className="bg-blue-500/20 rounded-lg p-4 text-blue-900 space-y-2">
                         <h3 className="font-semibold">Your organization will include:</h3>
                         <ul className="opacity-80 list-disc list-inside ml-2">
                             <li>Unlimited projects and tasks</li>

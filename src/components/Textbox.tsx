@@ -23,9 +23,10 @@ export default function Textbox({
                 id={id}
                 placeholder={placeholder}
                 rows={defaultRows}
+                value={state}
                 onChange={(e) => setState(e.currentTarget.value)}
                 className="w-full border border-neutral-300 rounded-lg outline-2 outline-transparent focus:outline-gray-400 duration-200 px-2 py-1"
-            >{state}</textarea>
+            ></textarea>
         </fieldset>
     );
 }

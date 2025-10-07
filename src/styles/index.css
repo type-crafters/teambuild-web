@@ -1,28 +1,85 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+@font-face {
+    src: url('/font/InstrumentSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-family: 'Instrument Sans';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('/font/InstrumentSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-family: 'Instrument Sans';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('/font/CascadiaCode-VariableFont_wdth,wght.ttf') format('truetype');
+    font-family: 'Cascadia Code';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('/font/CascadiaCode-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-family: 'Cascadia Code';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@theme {
+    --font-mono: 'Cascadia Code', Consolas, monospace;
+}
 
 @utility appearance-base-select {
     appearance: base-select;
 }
 
 @utility anchor-t-* {
-    top: calc(anchor(--value("top", "right", "bottom", "left")));
+    top: calc(anchor(--value('top', 'right', 'bottom', 'left')));
 }
 
 @utility anchor-b-* {
-    bottom: calc(anchor(--value("top", "right", "bottom", "left")));
+    bottom: calc(anchor(--value('top', 'right', 'bottom', 'left')));
 }
 
 @utility anchor-l-* {
-    left: calc(anchor(--value("top", "right", "bottom", "left")));
+    left: calc(anchor(--value('top', 'right', 'bottom', 'left')));
 }
 
 @utility anchor-r-* {
-    right: calc(anchor(--value("top", "right", "bottom", "left")));
+    right: calc(anchor(--value('top', 'right', 'bottom', 'left')));
+}
+
+@utility interpolate-keywords {
+    interpolate-size: allow-keywords;
+}
+
+@utility interpolate-numeric {
+    interpolate-size: numeric-only;
+}
+
+@utility interpolate-* {
+    interpolate-size: revert-layer;
+}
+
+@utility interpolate-* {
+    interpolate-size: --value('inherit', 'initial', 'unset');
 }
 
 @custom-variant picker {
     &::picker(select) {
+        @slot;
+    }
+}
+
+@custom-variant date-picker {
+    &::-webkit-calendar-picker-indicator {
         @slot;
     }
 }
@@ -33,8 +90,13 @@
     }
 }
 
-i.bi.bi-* {
-    display: flex;
+html,
+body {
+    font-family: 'Instrument Sans', Arial, Helvetica, sans-serif;
+}
+
+i.bi {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
 }

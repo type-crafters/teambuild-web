@@ -53,21 +53,21 @@ export default function UserSignupView(): JSX.Element {
                     <div className="bg-green-500/20 rounded-lg p-4 text-green-900 space-y-2">
                         <p className="font-semibold">Your free trial includes:</p>
                         <ul className="space-y-1 mx-2">
-                            <li className="space-x-1.5">
+                            <li className="flex items-center gap-2">
                                 <i className="bi bi-check-circle"></i>
                                 <span>14-day free trial</span>
                             </li>
-                            <li className="space-x-1.5">
+                            <li className="flex items-center gap-2">
                                 <i className="bi bi-check-circle"></i>
                                 <span>Up to 5 team members</span>
                             </li>
-                            <li className="space-x-1.5">
+                            <li className="flex items-center gap-2">
                                 <i className="bi bi-check-circle"></i>
                                 <span>Unlimited projects</span>
                             </li>
                         </ul>
                     </div>
-                    <Checkbox name="tos" state={termsOfService} setState={setTermsOfService}>
+                    <Checkbox name="termsOfService" state={termsOfService} setState={setTermsOfService}>
                         <p>
                             I agree to the&nbsp;
                             <Link href="/" className="text-blue-500 hover:underline">Terms of Service</Link>

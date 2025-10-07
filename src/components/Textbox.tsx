@@ -13,11 +13,11 @@ export default function Textbox({
     setState
 }: TextboxProps): JSX.Element {
     return (
-        <fieldset className={`w-full space-y-2 ${className ?? ""}`}>
-            <legend className="font-semibold">
+        <div className={`w-full space-y-2 ${className ?? ""}`}>
+            <h4 className="font-semibold">
                 {legend}
                 {required && <em className="text-red-600 pl-2">*</em>}
-            </legend>
+            </h4>
             <textarea
                 name={name}
                 id={id}
@@ -27,13 +27,13 @@ export default function Textbox({
                 onChange={(e) => setState(e.currentTarget.value)}
                 className="w-full border border-neutral-300 rounded-lg outline-2 outline-transparent focus:outline-gray-400 duration-200 px-2 py-1"
             ></textarea>
-        </fieldset>
+        </div>
     );
 }
 
 interface TextboxProps {
     name: string;
-    id?: string;
+    id?: string; 
     legend: string;
     required?: boolean;
     placeholder?: string;

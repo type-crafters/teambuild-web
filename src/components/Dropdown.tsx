@@ -15,11 +15,11 @@ export default function Dropdown({
     setState
 }: DropdownProps): JSX.Element {
     return (
-        <fieldset className={`w-full space-y-2 ${className ?? ""}`}>
-            <legend className="font-semibold">
+        <div className={`w-full space-y-2 ${className ?? ""}`}>
+            <h4 className="font-semibold">
                 {legend}
-                {required && <em className="text-red-600 pl-2">*</em>}
-            </legend>
+                {required && <em className="text-red-600 pl-1">*</em>}
+            </h4>
             <label htmlFor={id} className="flex items-center gap-2 w-full rounded-lg border border-neutral-300 px-2 py-1 outline-2 outline-transparent hover:outline-transparent has-focus:outline-gray-400 duration-200 relative">
                 {bi && <i className={`bi ${bi} opacity-60`} />}
                 <select
@@ -34,7 +34,7 @@ export default function Dropdown({
                 </select>
                 <i className="absolute right-2 bi bi-chevron-down pointer-events-none opacity-60"></i>
             </label>
-        </fieldset>
+        </div>
     );
 }
 

@@ -1,32 +1,19 @@
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+node_modules
 
-/coverage
-
-/.next/
-/out/
-
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
 /build
 
 .DS_Store
-*.pem
+Thumbs.db
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+.env
+.env.*
+!.env.example
+!.env.test
 
-.env*
-
-.vercel
-
-*.tsbuildinfo
-next-env.d.ts
-
-.vscode
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
